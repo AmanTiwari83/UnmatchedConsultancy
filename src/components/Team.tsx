@@ -57,6 +57,7 @@ export default function Team({ limit }: TeamProps) {
 
   return (
     <motion.section
+    aria-label="Our Team Section"
       className="py-12 bg-gray-50 px-4 md:px-16 lg:px-24 xl:px-32"
       variants={sectionVariants}
       initial="hidden"
@@ -79,7 +80,7 @@ export default function Team({ limit }: TeamProps) {
         {visibleTeam.map((team, idx) => (
           <motion.div key={idx} variants={cardVariants}>
 
-            <div
+            <article
               className="
     group relative overflow-hidden
     rounded-2xl bg-white
@@ -102,8 +103,8 @@ export default function Team({ limit }: TeamProps) {
                   >
                     <div className="relative h-full w-full rounded-full bg-white">
                       <Image
+                       alt={`Photo of ${team.name}, ${team.role}`}
                         src={team.image}
-                        alt={team.name}
                         fill
                         sizes="112px"
                         className="rounded-full object-cover"
@@ -170,7 +171,7 @@ export default function Team({ limit }: TeamProps) {
                   <MdEmail />
                 </Link>
               </div>
-            </div>
+            </article>
           </motion.div>
         ))}
       </motion.div>

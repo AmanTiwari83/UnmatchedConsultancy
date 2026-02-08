@@ -83,7 +83,7 @@ export default function Start() {
           Unmatched Consultancy — Your Trusted Business Partner
         </motion.h1>
 
-        <motion.p
+        {/* <motion.p
           variants={itemVariants}
           className="
             mx-auto mt-3 text-center
@@ -97,7 +97,21 @@ export default function Start() {
           Unmatched Consultancy helps startups and businesses stay compliant,
           streamline operations, and grow with confidence, backed by experts
           supporting businesses globally.
-        </motion.p>
+        </motion.p> */}
+
+        <motion.h2
+          variants={itemVariants}
+          className="
+    mx-auto mt-3 text-center
+    text-sm leading-relaxed
+    sm:text-base sm:leading-relaxed
+    max-w-[90%]
+    sm:max-w-2xl
+    text-slate-700
+  "
+        >
+          We help businesses grow with clarity and confidence. Unmatched Consultancy provides expert business advisory and financial services, guiding startups and organizations to scale efficiently. From compliance to growth strategy, we simplify processes and deliver solutions tailored to your goals.
+        </motion.h2>
 
         {/* Buttons */}
         <motion.div

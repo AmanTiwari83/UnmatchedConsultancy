@@ -63,12 +63,14 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm">
               <a
                 href="tel:+919910678889"
+                aria-label="Call Unmatched Consultancy at +91 9910678889"
                 className="flex items-center gap-2 text-gray-300 hover:text-secondary-500 transition-colors"
               >
                 <FaPhoneAlt className="text-secondary-500" /> +91 9910678889
               </a>
               <a
                 href="mailto:unmatchedconsultancy@gmail.com"
+                aria-label="Send Mail to Unmatched Consultancy at unmatchedconsultancy@gmail.com"
                 className="flex items-center gap-2 text-gray-300 hover:text-secondary-500 transition-colors"
               >
                 <MdEmail className="text-secondary-500" /> unmatchedconsultancy@gmail.com

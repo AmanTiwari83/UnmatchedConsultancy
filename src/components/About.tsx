@@ -67,125 +67,126 @@ const About = () => {
         description="Providing expert accounting, taxation, and advisory services."
       />
 
-{/* MAIN GRID */}
-<div
-  className="
+      {/* MAIN GRID */}
+      <div
+        className="
     mx-auto mt-16 grid max-w-7xl
     grid-cols-1 xl:grid-cols-2
     gap-10 px-4 md:px-16 lg:px-24
     items-stretch
     xl:min-h-[460px]
   "
->
-  {/* ---------------- LEFT : IMAGE ---------------- */}
-  <motion.div
-    variants={imageVariants}
-    className="relative h-full w-full"
-  >
-    {/* Glow */}
-    <div className="absolute -inset-4 rounded-3xl bg-primary-200/40 blur-2xl opacity-70" />
-
-    {/* Image container fills height */}
-    <div className="relative h-full min-h-[280px] xl:min-h-full w-full rounded-3xl overflow-hidden shadow-2xl">
-      <Image
-        src="/images/about/about-2.avif"
-        alt="Unmatched Consultancy Team"
-        fill
-        priority
-        className="object-cover"
-      />
-
-      {/* Floating Trust Card */}
-      <motion.div
-        variants={floatCardVariants}
-        className="absolute bottom-5 left-5 hidden md:flex items-center gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur"
       >
-        <div className="flex -space-x-3">
-          {[
-            "/images/about/user-1.png",
-            "/images/about/user-2.png",
-            "/images/about/user-3.png",
-          ].map((src, i) => (
-            <Image
-              key={i}
-              src={src}
-              alt="Team member"
-              width={34}
-              height={34}
-              className="rounded-full border-2 border-white"
-            />
-          ))}
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-800 text-xs text-white border-2 border-white">
-            20+
-          </div>
-        </div>
-        <p className="text-sm font-medium text-primary-900">
-          Trusted professionals
-        </p>
-      </motion.div>
-    </div>
-  </motion.div>
+        {/* ---------------- LEFT : IMAGE ---------------- */}
+        <motion.div
+          variants={imageVariants}
+          className="relative h-full w-full"
+        >
+          {/* Glow */}
+          <div className="absolute -inset-4 rounded-3xl bg-primary-200/40 blur-2xl opacity-70" />
 
-  {/* ---------------- RIGHT : CONTENT ---------------- */}
-  <motion.div
-    variants={contentVariants}
-    className="
+          {/* Image container fills height */}
+          <div className="relative h-full min-h-[280px] xl:min-h-full w-full rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/about/about-2.avif"
+              alt="Unmatched Consultancy Team working together"
+              fill
+              priority
+              className="object-cover"
+            />
+
+            {/* Floating Trust Card */}
+            <motion.div
+              variants={floatCardVariants}
+              className="absolute bottom-5 left-5 hidden md:flex items-center gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur"
+            >
+              <div className="flex -space-x-3">
+                {[
+                  "/images/about/user-1.png",
+                  "/images/about/user-2.png",
+                  "/images/about/user-3.png",
+                ].map((src, i) => (
+                  <Image
+                    key={i}
+                    src={src}
+                    alt={`Team member ${i + 1}`}
+                    width={34}
+                    height={34}
+                    className="rounded-full border-2 border-white"
+                  />
+                ))}
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-800 text-xs text-white border-2 border-white">
+                  20+
+                </div>
+              </div>
+              <p className="text-sm font-medium text-primary-900">
+                Trusted professionals
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* ---------------- RIGHT : CONTENT ---------------- */}
+        <motion.div
+          variants={contentVariants}
+          className="
       flex h-full w-full flex-col
       justify-center text-slate-800
     "
-  >
-    {/* Label */}
-    <span className="w-fit rounded-full bg-secondary-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-700">
-        Who We Are?
-    </span>
-
-    {/* Heading */}
-    <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-      We help businesses grow with
-      <span className="text-primary-700"> clarity & confidence</span>
-    </h2>
-
-    {/* Description */}
-    <p className="mt-5 text-base leading-relaxed text-gray-600">
-      Unmatched Consultancy is a trusted business advisory and financial
-      services firm helping startups, entrepreneurs, and established
-      organizations scale with confidence.
-    </p>
-
-    <p className="mt-4 text-base leading-relaxed text-gray-600">
-      From statutory compliance to growth-driven strategy, we simplify
-      complex processes and deliver solutions tailored to your business
-      goals.
-    </p>
-
-    {/* Highlights */}
-    <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-      {[
-        "20+ Industry Experts",
-        "Startup & Enterprise Focus",
-        "Compliance Made Simple",
-        "Growth-Oriented Strategy",
-      ].map((item, i) => (
-        <div
-          key={i}
-          className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm"
         >
-          <span className="h-2 w-2 rounded-full bg-primary-600" />
-          <span className="font-medium text-gray-700">{item}</span>
-        </div>
-      ))}
-    </div>
+          {/* Label */}
+          <span className="w-fit rounded-full bg-secondary-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-700">
+            Who We Are?
+          </span>
 
-    {/* CTA */}
-    <div className="mt-8">
-      {pathname !== "/about" ? (
-        <Button title="Know more" href="/about" />
-      ) : (
-        <Button title="Back to home" href="/" />
-      )}
-    </div>
-  </motion.div>
-</div>
+          {/* Heading */}
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight text-gray-900">
+            We help businesses grow with
+            <span className="text-primary-700"> clarity & confidence</span>
+          </h2>
+
+{/* Description Section 1 */}
+<motion.p
+  variants={contentVariants}
+  className="mt-5 text-base leading-relaxed text-gray-600"
+>
+  Unmatched Consultancy is a trusted business advisory and financial services firm helping startups, entrepreneurs, and established organizations scale efficiently.
+</motion.p>
+
+{/* Description Section 2 */}
+<motion.p
+  variants={contentVariants}
+  className="mt-4 text-base leading-relaxed text-gray-600"
+>
+  From statutory compliance to growth-driven strategy, we simplify complex processes and deliver solutions tailored to your business goals. Our experts support businesses globally to ensure compliance, streamline operations, and foster growth.
+</motion.p>
+
+          {/* Highlights */}
+          <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
+            {[
+              "20+ Industry Experts",
+              "Startup & Enterprise Focus",
+              "Compliance Made Simple",
+              "Growth-Oriented Strategy",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm"
+              >
+                <span className="h-2 w-2 rounded-full bg-primary-600" />
+                <span className="font-medium text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8">
+            {pathname !== "/about" && (
+              <Button title="Know more" href="/about" />
+            )}
+          </div>
+        </motion.div>
+      </div>
     </motion.section>
   );
 };

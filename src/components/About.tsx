@@ -136,7 +136,7 @@ const About = () => {
   >
     {/* Label */}
     <span className="w-fit rounded-full bg-secondary-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-700">
-        Who We Are
+        Who We Are?
     </span>
 
     {/* Heading */}

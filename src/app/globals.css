@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f2f5fa;
+  --color-primary-100: #e1e7f1;
+  --color-primary-200: #c3cfe4;
+  --color-primary-300: #9fb0d3;
+  --color-primary-400: #6f88bc;
+  --color-primary-500: #4a649f;
+  --color-primary-600: #364d84;
+  --color-primary-700: #2b3f6c;
+  --color-primary-800: #20385c; /* base color */
+  --color-primary-900: #162744;
+  --color-primary-950: #0f1b37;
+
+  --color-secondary-50: #fdf7ef;
+  --color-secondary-100: #f8e9d1;
+  --color-secondary-200: #f2d6a8;
+  --color-secondary-300: #ebc07d;
+  --color-secondary-400: #e2a953;
+  --color-secondary-500: #d8922f;
+  --color-secondary-600: #bc8737; /* base color */
+  --color-secondary-700: #a66e2b;
+  --color-secondary-800: #895822;
+  --color-secondary-900: #6d431b;
+  --color-secondary-950: #523116;
+}
+
+body {
+  font-family: "Regular", sans-serif;
+}
+
+/* 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ededed ;
+    --foreground:  #0a0a0a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@font-face {
+  font-family: "Black";
+  src: url("../../public/fonts/Poppins-Black.ttf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("../../public/fonts/Poppins-Bold.ttf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Semibold";
+  src: url("../../public/fonts/Poppins-SemiBold.ttf") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("../../public/fonts/Poppins-Medium.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Light";
+  src: url("../../public/fonts/Poppins-Light.ttf") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.family-mainheading {
+  font-family: "Black", sans-serif;
+}
+
+.family-bold {
+  font-family: "Bold", sans-serif;
+}
+
+.family-semibold {
+  font-family: "Semibold", sans-serif;
+}
+
+.family-medium {
+  font-family: "Medium", sans-serif;
+}
+
+.family-regular {
+  font-family: "Regular", sans-serif;
+}
+
+.family-light {
+  font-family: "Light", sans-serif;
+}
+
+/* quick chat animation */
+
+@keyframes chatOpen {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-chatOpen {
+  animation: chatOpen 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* toast message */
+
+/* Change success icon color */
+.Toastify__toast-icon svg {
+  fill: #162744;
+}
+
+:root {
+  --toastify-color-success: #162744;
+}

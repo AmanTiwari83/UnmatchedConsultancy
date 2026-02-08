@@ -15,9 +15,22 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-export const metadata: Metadata = {
-  title: "Unmatched Consultancy",
-  description: "Professional accounting, taxation & advisory services",
+export const metadata = {
+  title: "Unmatched Consultancy | Business Advisory & Financial Services",
+  description:
+    "Unmatched Consultancy helps businesses grow with clarity and confidence. We provide expert business advisory, statutory compliance, and financial services for startups and established organizations.",
+  keywords: [
+    "unmatched",
+    "consultancy",
+    "Unmatched Consultancy",
+    "business consultancy",
+    "financial services",
+    "statutory compliance",
+    "startup advisory",
+    "business growth strategy",
+    "entrepreneur consulting",
+  ],
+  metadataBase: new URL("https://unmatchedconsultancy.com"),
 };
 
 export default function RootLayout({

@@ -11,7 +11,6 @@ const createSlug = (title: string) => {
 };
 
 export async function GET() {
-    // console.log("API route hit: /api/blogs/[slug]");
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -21,26 +20,17 @@ export async function GET() {
       scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
     });
 
-    // console.log("Auth object created:", auth);
-
     const sheets = google.sheets({
       version: "v4",
       auth,
     });
-
-    // console.log("Google Sheets client created:", sheets);
-    // console.log(process.env.GOOGLE_BLOG_SHEET_ID, "Spreadsheet ID");
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_BLOG_SHEET_ID!,
       range: "A2:H",
     });
 
-    // console.log(response, "response from google sheets");
-
     const rows = response.data.values || [];
-
-    // console.log(rows, "rows from google sheets");
 
     const blogs = rows.map((row, index) => {
       const title = row[0] || "";
@@ -56,7 +46,6 @@ export async function GET() {
       };
     });
 
-    console.log(blogs, "blogs array created from google sheets");
     return NextResponse.json({
       success: true,
       data: blogs,

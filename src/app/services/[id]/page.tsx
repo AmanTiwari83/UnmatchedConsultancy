@@ -28,7 +28,7 @@ const Page = async ({ params }: PageProps) => {
         {service.shortContent}
       </p> */}
       <Heading
-        label="Service in Detail"
+        label="Services"
         title={service.title}
         description={service.shortContent}
       />

@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
 
 const createSlug = (title: string) => {
@@ -17,11 +17,11 @@ const calculateReadTime = (content: string) => {
 };
 
 export async function GET(
-  req: Request,
-  { params }: { params: { slug: string } }
+  req: NextRequest,
+  context: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = await context.params;
 
     const auth = new google.auth.GoogleAuth({
       credentials: {

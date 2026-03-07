@@ -128,10 +128,10 @@ type PageProps = {
 };
 
 const Page = async ({ params }: PageProps) => {
-  const { id } = params;
+  const { id } = await params; // ✅ unwrap the promise
 
   // const blog = detailedBlogData[id as keyof typeof detailedBlogData];
-  const res = await fetch(`/api/blogs/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/blogs/${id}`, {
     cache: "no-store",
   });
 

@@ -14,6 +14,16 @@ export const calculateReadTime = (content: string) => {
   return `${minutes} min read`;
 };
 
+const formatDate = (dateStr: string) => {
+  if (!dateStr) return "";
+  const date = new Date(dateStr); // yyyy-mm-dd is safe to parse
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
 export async function getBlogBySlug(slug: string) {
   const auth = new google.auth.GoogleAuth({
     credentials: {
@@ -39,7 +49,7 @@ export async function getBlogBySlug(slug: string) {
       slug: createSlug(title),
       title,
       image: row[1] || "/images/blogs/blog-1.png",
-      date: row[2] ? new Date(row[2]).toISOString().split("T")[0] : "",
+      date: formatDate(row[2] || ""),
       publishedBy: row[3] || "",
       category: row[4] || "",
       readTime: calculateReadTime(content),

@@ -18,10 +18,10 @@ const calculateReadTime = (content: string) => {
 
 export async function GET(
   req: Request,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: { slug: string } }
 ) {
   try {
-    const { slug } = await params;
+    const { slug } = params;
 
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -70,9 +70,14 @@ export async function GET(
       success: true,
       data: blog,
     });
-  } catch (error: any){
+  } catch (error: any) {
+    console.error("BLOG API ERROR:", error);
+
     return NextResponse.json(
-      { success: false, message: error.message },
+      {
+        success: false,
+        message: error.message || "Something went wrong",
+      },
       { status: 500 }
     );
   }

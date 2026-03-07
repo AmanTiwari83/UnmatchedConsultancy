@@ -62,6 +62,8 @@ export async function GET() {
       data: blogs,
     });
   } catch (error: any) {
+    console.error("BLOG API ERROR:", error);
+
     return NextResponse.json(
       {
         success: false,
